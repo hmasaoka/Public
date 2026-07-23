@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>コミアプリ - アカウント削除のお申し込み</title>
+<style>
+  :root {
+    color-scheme: light;
+  }
+  body {
+    margin: 0;
+    background: #f5f5f5;
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    line-height: 1.7;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+  h1 {
+    font-size: 22px;
+    color: #0066cc;
+    margin-bottom: 4px;
+  }
+  .updated {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 24px;
+  }
+  h2 {
+    font-size: 16px;
+    margin-top: 28px;
+    margin-bottom: 8px;
+  }
+  p, li {
+    font-size: 14px;
+    color: #1a1a1a;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  .card {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 16px;
+  }
+  .button {
+    display: inline-block;
+    margin-top: 12px;
+    background: #0066cc;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .note {
+    font-size: 12px;
+    color: #666666;
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>コミアプリ - アカウント削除のお申し込み</h1>
+  <p class="updated">最終更新日: 2026年7月23日</p>
+
+  <p>
+    コミアプリをご利用中の方は、アプリ内(設定画面 &gt; 「アカウントを削除する」)からいつでもご自身でアカウントを削除できます。
+  </p>
+  <p>
+    アプリをインストールしていない場合や、アプリを利用できない事情がある場合でも、このページから削除を申請できます。
+  </p>
+
+  <div class="card">
+    <h2>削除の申請方法</h2>
+    <p>
+      下のボタンからメールソフトを開き、登録に使用したメールアドレスを添えてご連絡ください。本人確認のうえ、対応いたします。
+    </p>
+    <button class="button" id="contact-button" type="button">メールで申請する</button>
+  </div>
+
+  <h2>削除される情報</h2>
+  <ul>
+    <li>アカウント情報(メールアドレス・表示名・プロフィール画像・自己紹介)</li>
+    <li>ご本人の投稿・コメント・チャット発言</li>
+    <li>ご本人の出欠回答・通報履歴・ブロック設定</li>
+  </ul>
+
+  <h2>削除されず残る情報</h2>
+  <p>
+    ご本人が登録したイベントや、分科会に共有した資料ファイルは「みんなの資産」として残り、作成者・アップロード者の表示のみ削除されます(投稿者不明の状態になります)。
+  </p>
+
+  <h2>対応期間</h2>
+  <p>
+    申請受付後、通常7日以内に削除処理を行います。処理完了後、アカウントおよび上記データへは再度アクセスできなくなります。この操作は取り消せません。
+  </p>
+
+  <p class="note">
+    本ページは Google Play のアカウント削除に関するポリシーに基づき提供しています。プライバシーポリシーの全文はアプリ内(設定 &gt; プライバシーポリシー)をご確認ください。
+  </p>
+</main>
+<script>
+  // メールアドレスをHTMLソースに平文で残さないよう、断片から組み立てて設定する
+  (function () {
+    var user = ["m", "i", "s", "t", "r", "a", "l", ".", "k", "i", "r", "o", "r", "o"].join("");
+    var domain = ["g", "m", "a", "i", "l", ".", "c", "o", "m"].join("");
+    var address = user + "@" + domain;
+    var subject = encodeURIComponent("コミアプリ アカウント削除申請");
+    document.getElementById("contact-button").addEventListener("click", function () {
+      window.location.href = "mailto:" + address + "?subject=" + subject;
+    });
+  })();
+</script>
+</body>
+</html>
