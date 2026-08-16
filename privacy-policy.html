@@ -13,7 +13,7 @@
     h2 { margin: 28px 0 8px; font-size: 18px; }
     p, li { font-size: 14px; }
     .updated { margin: 0 0 24px; color: #666; font-size: 12px; }
-    .button { display: inline-block; margin-top: 8px; padding: 10px 16px; border-radius: 6px; background: #0066cc; color: #fff; text-decoration: none; font-weight: 700; }
+    .mail { display: inline-block; margin: 4px 0 0; padding: 10px 16px; border: 1px solid #ddd; border-radius: 6px; background: #f5f5f5; font-weight: 700; font-size: 15px; user-select: all; }
     a { color: #0066cc; }
   </style>
 </head>
@@ -21,7 +21,9 @@
 <main>
   <article>
     <h1>SETOUCHI CLUB プライバシーポリシー</h1>
-    <p class="updated">最終更新日: 2026年8月8日</p>
+    <p class="updated">最終更新日: 2026年8月14日</p>
+
+    <p>本サービスは、SETOUCHI CLUB（セトウチクラブ・香川県高松市）が運営します。</p>
 
     <h2>1. 収集する情報</h2>
     <p>本サービスでは、次の情報を収集します。</p>
@@ -47,16 +49,16 @@
     <p>アプリを利用できない場合は、<a href="https://hmasaoka.github.io/Public/">アカウント削除申請ページ</a>から申請できます。</p>
 
     <h2>6. お問い合わせ</h2>
-    <p>本ポリシーに関するお問い合わせは、下記ボタンからメールでご連絡ください。</p>
-    <a id="contact" class="button" href="#">メールで問い合わせる</a>
+    <p>本ポリシーに関するお問い合わせは、下記のメールアドレスまでご連絡ください。</p>
+    <p class="mail">clubsetouchi@gmail.com</p>
   </article>
 </main>
-<script>
-  (() => {
-    const p = ["mistral", ".", "kiroro", "@", "gmail", ".", "com"];
-    const subject = encodeURIComponent("SETOUCHI CLUB プライバシーに関するお問い合わせ");
-    document.getElementById("contact").href = `mailto:${p.join("")}?subject=${subject}`;
-  })();
-</script>
+<!--
+  ⚠️ 連絡先はHTMLソースに平文で記載すること（2026-08-14）。
+  以前は JavaScript で断片から組み立てていた（スパム対策）が、
+  Guideline 5.6「何かを隠している」疑いで審査中の状況では、
+  提出したURLの中で連絡先が機械的に隠れて見えるのは不利にしかならない。
+  Apple 1.2（UGC）も「公開された連絡先」を求めている。
+-->
 </body>
 </html>

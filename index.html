@@ -49,19 +49,21 @@
     padding: 20px;
     margin-top: 16px;
   }
-  .button {
+  .mail {
     display: inline-block;
     margin-top: 12px;
-    background: #0066cc;
-    color: #ffffff !important;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 12px 20px;
+    background: #f5f5f5;
+    border: 1px solid #dddddd;
     border-radius: 6px;
-    border: none;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    user-select: all;
+  }
+  .sub {
+    font-size: 12px;
+    color: #666666;
+    margin-top: 8px;
   }
   .note {
     font-size: 12px;
@@ -73,7 +75,9 @@
 <body>
 <main>
   <h1>SETOUCHI CLUB - アカウント削除のお申し込み</h1>
-  <p class="updated">最終更新日: 2026年8月8日</p>
+  <p class="updated">最終更新日: 2026年8月14日</p>
+
+  <p>本ページは、SETOUCHI CLUB（セトウチクラブ・香川県高松市）が提供しています。</p>
 
   <p>
     SETOUCHI CLUBをご利用中の方は、アプリ内(設定画面 &gt; 「アカウントを削除する」)からいつでもご自身でアカウントを削除できます。
@@ -85,9 +89,10 @@
   <div class="card">
     <h2>削除の申請方法</h2>
     <p>
-      下のボタンからメールソフトを開き、登録に使用したメールアドレスを添えてご連絡ください。本人確認のうえ、対応いたします。
+      下記のメールアドレスまで、登録に使用したメールアドレスを添えてご連絡ください。本人確認のうえ、対応いたします。
     </p>
-    <button class="button" id="contact-button" type="button">メールで申請する</button>
+    <p class="mail">clubsetouchi@gmail.com</p>
+    <p class="sub">件名は「アカウント削除申請」としていただけると助かります。</p>
   </div>
 
   <h2>削除される情報</h2>
@@ -99,7 +104,7 @@
 
   <h2>削除されず残る情報</h2>
   <p>
-    ご本人が登録したイベントや、分科会に共有した資料ファイルは「みんなの資産」として残り、作成者・アップロード者の表示のみ削除されます(投稿者不明の状態になります)。
+    ご本人が登録したイベントや、分科会に共有した資料ファイルはコミュニティの共有情報として残り、作成者・アップロード者の表示のみ削除されます(投稿者不明の状態になります)。
   </p>
 
   <h2>対応期間</h2>
@@ -111,17 +116,12 @@
     本ページは Google Play のアカウント削除に関するポリシーに基づき提供しています。プライバシーポリシーの全文は<a href="privacy-policy.html">こちら</a>、またはアプリ内(設定 &gt; プライバシーポリシー)でご確認ください。
   </p>
 </main>
-<script>
-  // メールアドレスをHTMLソースに平文で残さないよう、断片から組み立てて設定する
-  (function () {
-    var user = ["m", "i", "s", "t", "r", "a", "l", ".", "k", "i", "r", "o", "r", "o"].join("");
-    var domain = ["g", "m", "a", "i", "l", ".", "c", "o", "m"].join("");
-    var address = user + "@" + domain;
-    var subject = encodeURIComponent("SETOUCHI CLUB アカウント削除申請");
-    document.getElementById("contact-button").addEventListener("click", function () {
-      window.location.href = "mailto:" + address + "?subject=" + subject;
-    });
-  })();
-</script>
+<!--
+  ⚠️ 連絡先はHTMLソースに平文で記載すること（2026-08-14）。
+  以前は JavaScript で断片から組み立てていた（スパム対策）が、
+  Guideline 5.6「何かを隠している」疑いで審査中の状況では、
+  提出したURLの中で連絡先が機械的に隠れて見えるのは不利にしかならない。
+  Google Play のアカウント削除ポリシーも、到達可能な申請手段を求めている。
+-->
 </body>
 </html>
